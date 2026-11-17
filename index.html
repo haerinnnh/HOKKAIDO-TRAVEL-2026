@@ -76,13 +76,10 @@ footer{text-align:center;color:var(--mute);font:italic 14px "Cormorant Garamond"
 <tr><td>11/29–12/1<br>無餐</td><td>ONSEN RYOKAN 由縁 札幌<br><small>Kita 1 Jonishi 7 Chome-6, Chuo Ward, Sapporo 060-0001<br>訂單 IK1725495102</small></td></tr></table></div>
 <div class="card"><table><tr><th>全程大眾運輸</th><th></th></tr><tr><td>JR Pass</td><td>札幌－富良野區域 4 日券，起算日 11/25，效期 11/25–11/28</td></tr><tr><td>市區交通</td><td>地鐵刷 Apple Pay；公車、JR 快速 Airport 刷 Suica</td></tr><tr><td>現金</td><td>美瑛⇄白金溫泉巴士僅收現金</td></tr></table></div></section>
 <section id="home"><h2>七日概覽</h2><p class="sub">點選任一天，跳至當日行程</p><div class="grid" id="ov"></div></section>
-<section id="flag"><h2>待確認事項</h2><p class="sub">仍需你確認的項目（可勾選，僅存於此裝置）</p><div class="card chk" id="ck"></div></section>
 <div id="days"></div>
 </main>
 <footer>— Hokkaido 2026 —</footer>
 <script>
-var G=[
-["Day 5 換飯店行李","請確認 Hotel Emion 可於退房後寄放行李到晚上，並預留傍晚領行李、搭車前往由縁的時間。"]];
 var D=[
 ["11/25","三","抵達新千歲 ➔ 札幌午餐 ➔ 宿旭川","旭川",[
 ["10:55–12:15","抵達新千歲機場，入境領行李。至 JR 外籍旅客服務處或指定席售票機兌換「札幌－富良野區域鐵路周遊券（4 日券）」（建議先於官網預購並劃位）。"],
@@ -112,9 +109,9 @@ var D=[
 ["晚間","大通公園「札幌白色燈樹節（White Illumination）」，晚餐湯咖哩或居酒屋。","2026 大通會場點燈期間 11/20–12/25（札幌市公告），每晚約 16:30–22:00，11/28 在期間內。同場有慕尼黑聖誕市集（大通 2 丁目，11:00–21:00）。","已確認"]],
 "順路選配：回程公車在「藝術之森入口」下車，參觀札幌藝術之森室內美術館。"],
 ["11/29","日","白色戀人公園 ➔ 札幌啤酒博物館 ➔ 狸小路","札幌",[
-["09:00–09:30","享用 Hotel Emion 早餐後退房（退房時間 11:00）。行李寄放在 Hotel Emion。","請向 Emion 確認退房後可寄放行李到晚上。","新增"],["09:30–12:00","地鐵東西線到宮之澤站，造訪白色戀人公園（巧克力產線與雪中庭園）。"],
+["09:00–09:30","享用 Hotel Emion 早餐後退房（退房時間 11:00）。行李寄放在 Hotel Emion。"],["09:30–12:00","地鐵東西線到宮之澤站，造訪白色戀人公園（巧克力產線與雪中庭園）。"],
 ["13:00–15:00","公車到札幌啤酒博物館：紅磚歷史建築，付費試飲三款北海道限定生啤。"],
-["16:00 後","狸小路商店街（有全天候遮雨棚），在唐吉訶德與藥妝店辦理免稅採購。"],["17:30 後","回 Hotel Emion 領取行李，再搭車一起前往 ONSEN RYOKAN 由縁 札幌 Check-in（11/29–12/1，無早餐）。","入住時間請以訂房確認信為準。","新增"]]],
+["16:00 後","狸小路商店街（有全天候遮雨棚），在唐吉訶德與藥妝店辦理免稅採購。"],["17:30 後","回 Hotel Emion 領取行李，再搭車一起前往 ONSEN RYOKAN 由縁 札幌 Check-in（11/29–12/1，無早餐）。"]]],
 ["11/30","一","市區暖胃早餐 ➔ 莫埃來沼公園 ➔ 車站商圈採買","札幌",[
 ["09:00–10:30","悠閒享用復古喫茶店厚切吐司早餐（11/29–12/1 住宿無早餐）。"],
 ["10:45–11:30","地鐵東豐線到「環狀通東站」，轉中央巴士（東 69／79 號）到「モエレ沼公園東口」（地鐵刷 Apple Pay，巴士刷 Suica）。"],
@@ -131,11 +128,8 @@ o+='<a class="chip" href="#d'+k+'"><b>Day '+k+'・'+d[0]+'（'+d[1]+'）</b><spa
 h+='<section id="d'+k+'"><div class="card"><div class="dh"><span class="n">'+k+'</span><h3>'+d[2]+'<small>'+d[0]+'（週'+d[1]+'）・'+d[3]+'</small></h3></div><ul class="t">';
 d[4].forEach(function(r){h+='<li><time>'+r[0]+'</time>'+r[1]+(r[2]?'<span class="wn"><span class="tag">'+(r[3]||'待確認')+'</span>'+r[2]+'</span>':'')+'</li>'});
 h+='</ul>'+(d[5]?'<div class="note">'+d[5]+'</div>':'')+'</div></section>'});
-n+='<a href="#flag">待確認</a>';
-var S={};try{S=JSON.parse(localStorage.getItem("hk26")||"{}")}catch(e){}
-G.forEach(function(g,i){c+='<label><input type="checkbox" data-i="'+i+'"'+(S[i]?" checked":"")+'><span><b>'+g[0]+'</b><br>'+g[1]+'</span></label>'});
-$("nav").innerHTML=n;$("ov").innerHTML=o;$("days").innerHTML=h;$("ck").innerHTML=c;
-$("ck").addEventListener("change",function(e){S[e.target.dataset.i]=e.target.checked;try{localStorage.setItem("hk26",JSON.stringify(S))}catch(x){}});
+
+$("nav").innerHTML=n;$("ov").innerHTML=o;$("days").innerHTML=h;
 </script>
 </body>
 </html>
