@@ -61,10 +61,11 @@ footer{text-align:center;color:var(--mute);font:italic 14px "Cormorant Garamond"
 <nav><div id="nav"></div></nav>
 <main class="w">
 <p class="intro">十一月底的北海道，初雪剛落。<br>從旭川的藍河與白鬚瀑布，到札幌的白色燈樹，<br>七天六夜，慢慢走過旭川、美瑛與札幌，把初冬的寧靜收進手帳。</p>
-<section id="home"><h2>七日概覽</h2><p class="sub">點選任一天，跳至當日行程</p><div class="grid" id="ov"></div></section>
-<section id="flag"><h2>待確認事項</h2><p class="sub">仍需你確認的項目（可勾選，僅存於此裝置）</p><div class="card chk" id="ck"></div></section>
-<div id="days"></div>
-<section id="info"><h2>航班・住宿・交通</h2><p class="sub">資料皆取自 PDF</p>
+<section id="info"><h2>行前資訊</h2><p class="sub">機場接送・航班・住宿・大眾運輸</p>
+<div class="card"><table><tr><th>機場接送</th><th>時間</th></tr>
+<tr><td>11/25</td><td>01:40 台中 → 03:50 桃園機場第一航廈</td></tr>
+<tr><td>12/1</td><td>16:25 桃園機場第一航廈 → 18:35 台中</td></tr></table>
+</div>
 <div class="card"><table><tr><th>日期</th><th>航班</th><th>時間</th></tr>
 <tr><td>11/25</td><td>IT234<br>TPE → CTS</td><td>06:20 → 10:55<br>託運 20KG／手提 10KG</td></tr>
 <tr><td>12/1</td><td>IT235<br>CTS → TPE</td><td>11:55 → 15:35<br>託運 40KG／手提 10KG</td></tr></table>
@@ -73,11 +74,10 @@ footer{text-align:center;color:var(--mute);font:italic 14px "Cormorant Garamond"
 <tr><td>11/25–11/27<br>附早餐</td><td>JR Inn 旭川（JRイン旭川）<br><small>7 Chome-2-5 Miyashitadori, Asahikawa 070-0030<br>訂單 IN1666599341</small></td></tr>
 <tr><td>11/27–11/29<br>附早餐</td><td>Hotel Emion Sapporo（ホテル エミオン 札幌）<br><small>1 Chome-4 Kita 8 Jonishi, Kita Ward, Sapporo 060-0808<br>訂單 IK1667099192</small></td></tr>
 <tr><td>11/29–12/1<br>無餐</td><td>ONSEN RYOKAN 由縁 札幌<br><small>Kita 1 Jonishi 7 Chome-6, Chuo Ward, Sapporo 060-0001<br>訂單 IK1725495102</small></td></tr></table></div>
-<div class="card"><table><tr><th>全程大眾運輸</th><th></th></tr><tr><td>JR Pass</td><td>札幌－富良野區域 4 日券，起算日 11/25，效期 11/25–11/28</td></tr><tr><td>市區交通</td><td>地鐵刷 Apple Pay；公車、JR 快速 Airport 刷 Suica</td></tr><tr><td>現金</td><td>美瑛⇄白金溫泉巴士僅收現金</td></tr></table></div>
-<div class="card"><table><tr><th>機場接送</th><th>時間</th></tr>
-<tr><td>11/25</td><td>01:40 台中 → 03:50 桃園機場第一航廈</td></tr>
-<tr><td>12/1</td><td>16:25 桃園機場第一航廈 → 18:35 台中</td></tr></table>
-</div></section>
+<div class="card"><table><tr><th>全程大眾運輸</th><th></th></tr><tr><td>JR Pass</td><td>札幌－富良野區域 4 日券，起算日 11/25，效期 11/25–11/28</td></tr><tr><td>市區交通</td><td>地鐵刷 Apple Pay；公車、JR 快速 Airport 刷 Suica</td></tr><tr><td>現金</td><td>美瑛⇄白金溫泉巴士僅收現金</td></tr></table></div></section>
+<section id="home"><h2>七日概覽</h2><p class="sub">點選任一天，跳至當日行程</p><div class="grid" id="ov"></div></section>
+<section id="flag"><h2>待確認事項</h2><p class="sub">仍需你確認的項目（可勾選，僅存於此裝置）</p><div class="card chk" id="ck"></div></section>
+<div id="days"></div>
 </main>
 <footer>— Hokkaido 2026 —</footer>
 <script>
@@ -124,14 +124,14 @@ var D=[
 ["08:34–09:13","由縁 札幌退房，前往札幌站，搭 08:34 發車的 JR 快速 Airport 36 號，09:13 抵達新千歲機場（車程 39 分鐘，刷 Suica 進站）。"],
 ["09:13–10:30","逛國內線 2 樓伴手禮大街與 3 樓 Royce 巧克力世界，做最後補貨。"],
 ["10:30–11:55","辦理國際線託運、安檢出境，搭 IT235 返台。","台灣虎航櫃檯起飛前 2.5 小時（09:25）開櫃、45 分鐘前（11:10）截止，10:30 辦理在時限內。因安檢出境需時，建議 09:13 抵達後，趁 09:25 開櫃先辦好託運再逛街。","已確認"]]]];
-var $=function(i){return document.getElementById(i)},h="",o="",n='<a href="#home">首頁</a>',c="";
+var $=function(i){return document.getElementById(i)},h="",o="",n='<a href="#home">首頁</a><a href="#info">行前資訊</a>',c="";
 D.forEach(function(d,i){var k=i+1;
 n+='<a href="#d'+k+'">Day '+k+'</a>';
 o+='<a class="chip" href="#d'+k+'"><b>Day '+k+'・'+d[0]+'（'+d[1]+'）</b><span>'+d[3]+'</span></a>';
 h+='<section id="d'+k+'"><div class="card"><div class="dh"><span class="n">'+k+'</span><h3>'+d[2]+'<small>'+d[0]+'（週'+d[1]+'）・'+d[3]+'</small></h3></div><ul class="t">';
 d[4].forEach(function(r){h+='<li><time>'+r[0]+'</time>'+r[1]+(r[2]?'<span class="wn"><span class="tag">'+(r[3]||'待確認')+'</span>'+r[2]+'</span>':'')+'</li>'});
 h+='</ul>'+(d[5]?'<div class="note">'+d[5]+'</div>':'')+'</div></section>'});
-n+='<a href="#flag">待確認</a><a href="#info">航班住宿</a>';
+n+='<a href="#flag">待確認</a>';
 var S={};try{S=JSON.parse(localStorage.getItem("hk26")||"{}")}catch(e){}
 G.forEach(function(g,i){c+='<label><input type="checkbox" data-i="'+i+'"'+(S[i]?" checked":"")+'><span><b>'+g[0]+'</b><br>'+g[1]+'</span></label>'});
 $("nav").innerHTML=n;$("ov").innerHTML=o;$("days").innerHTML=h;$("ck").innerHTML=c;
